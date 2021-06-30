@@ -13,6 +13,7 @@ class CountryAdapter (val countries: List<Country>) : RecyclerView.Adapter<Count
     class CountryViewHolder(var binding: CountryItemsBinding) : RecyclerView.ViewHolder(binding.root){
 
         fun bind (country : Country){
+            binding.flagIM.setImageResource(country.flag)
             binding.continentTX.text=country.continent
             binding.countryTX.text=country.name
             binding.populationTX.text=country.population.toString()
@@ -32,7 +33,7 @@ class CountryAdapter (val countries: List<Country>) : RecyclerView.Adapter<Count
     }
 
     override fun getItemCount(): Int {
-        
+
         return countries.size
     }
 }
